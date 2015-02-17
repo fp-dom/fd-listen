@@ -11,11 +11,12 @@
 
 ```js
 var listen = require('fd-listen');
+var select = require('fd-select');
 
 var onClick = listen('click');
 var onClickSetClicked = onClick((event) => {
   event.target.innerHTML = 'clicked';
 });
 
-onClickSetClicked(a);
+onClickSetClicked(select('.link'));
 ```
