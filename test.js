@@ -19,7 +19,7 @@ describe("fd-listen", function () {
     a = document.createElement("a");
     a.setAttribute("href", "#");
     a.innerHTML = "nope";
-    document.body.appendChild(a);
+    document.body.innerHTML = a;
   });
 
   it("#listen", function () {
@@ -30,6 +30,14 @@ describe("fd-listen", function () {
     listen("click")(function (event) {
       event.target.innerHTML = "clicked";
     })(a);
+    a.dispatchEvent(e);
+    assert.equal(a.innerHTML, "clicked");
+  });
+
+  it("#listen", function () {
+    listen("click")(function (event) {
+      event.target.innerHTML = "clicked";
+    })([a]);
     a.dispatchEvent(e);
     assert.equal(a.innerHTML, "clicked");
   });

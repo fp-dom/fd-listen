@@ -12,7 +12,7 @@ describe('fd-listen', () => {
     a = document.createElement('a');
     a.setAttribute('href', '#');
     a.innerHTML = 'nope';
-    document.body.appendChild(a);
+    document.body.innerHTML = a;
   });
 
   it('#listen', () => {
@@ -21,6 +21,12 @@ describe('fd-listen', () => {
     assert.equal(typeof listen('click')(() => {}), 'function');
 
     listen('click')((event) => {event.target.innerHTML = 'clicked';})(a);
+    a.dispatchEvent(e);
+    assert.equal(a.innerHTML, 'clicked');
+  });
+
+  it('#listen', () => {
+    listen('click')((event) => {event.target.innerHTML = 'clicked';})([a]);
     a.dispatchEvent(e);
     assert.equal(a.innerHTML, 'clicked');
   });
