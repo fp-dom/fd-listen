@@ -36,6 +36,7 @@
     "mochify": "^2.2.0"
   },
   "dependencies": {
-    "fj-curry": "^1.0.0"
+    "fj-curry": "^1.0.0",
+    "fj-flatten": "^1.0.0"
   }
 }

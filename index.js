@@ -1,15 +1,12 @@
 "use strict";
 
+var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
+var flatten = _interopRequire(require("fj-flatten"));
+
 var curry3 = require("fj-curry").curry3;
 require("6to5/polyfill");
 
-
-// TODO extract to module
-function flatten(arr) {
-  return arr.reduce(function (flat, toFlatten) {
-    return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
-  }, []);
-}
 
 var listen = function (type, listener, targets) {
   return (function () {
