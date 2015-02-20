@@ -1,6 +1,6 @@
 {
   "name": "fd-listen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Handle DOM-events FP-style",
   "main": "index.js",
   "scripts": {
