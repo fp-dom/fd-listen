@@ -4,14 +4,13 @@ var gulp = require('gulp'),
   sourcemaps = require('gulp-sourcemaps'),
   rename = require('gulp-rename'),
   mochify = require('mochify'),
-  to5 = require('gulp-6to5');
+  babel = require('gulp-babel');
 
-gulp.task('6to5', function() {
+gulp.task('babel', function() {
   return gulp.src('**/*.es6')
     .pipe(sourcemaps.init())
-    .pipe(to5({
-      experimental: true,
-      loose: 'all'
+    .pipe(babel({
+	stage: 0
     }))
     .pipe(sourcemaps.write())
     .pipe(rename({
@@ -20,7 +19,7 @@ gulp.task('6to5', function() {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('test', ['6to5'], function() {
+gulp.task('test', ['babel'], function() {
   mochify('./test.js', {
     reporter: 'tap'
   }).bundle();

@@ -1,6 +1,6 @@
 import flatten from 'fj-flatten';
 import { curry3 } from 'fj-curry';
-require('6to5/polyfill');
+require('babel/polyfill');
 
 
 let listen = (type, listener, targets) =>
