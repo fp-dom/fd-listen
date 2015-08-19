@@ -1,6 +1,6 @@
 import flatten from 'fj-flatten';
 import { curry3 } from 'fj-curry';
-require('babel/polyfill');
+require('core-js/shim');
 
 
 let listen = (type, listener, targets) =>
