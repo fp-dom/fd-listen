@@ -12,7 +12,7 @@ var _fjFlatten2 = _interopRequireDefault(_fjFlatten);
 
 var _fjCurry = require('fj-curry');
 
-require('core-js/shim');
+
 
 var listen = function listen(type, listener, targets) {
   return (function () {

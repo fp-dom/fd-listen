@@ -1,10 +1,10 @@
 {
   "name": "fd-listen",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Handle DOM-events FP-style",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "node --check index.js"
   },
   "repository": {
     "type": "git",
@@ -25,18 +25,9 @@
     "url": "https://github.com/fp-dom/fd-listen/issues"
   },
   "homepage": "https://github.com/fp-dom/fd-listen",
-  "devDependencies": {
-    "babel": "^5.8.21",
-    "gulp": "^3.8.10",
-    "gulp-babel": "^5.2.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-run": "^1.6.6",
-    "gulp-sourcemaps": "^1.3.0",
-    "gulp-watch": "^4.1.0",
-    "mochify": "^2.2.0"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "core-js": "^1.1.0",
+    "core-js": "^3.50.0",
     "fj-curry": "^1.0.0",
     "fj-flatten": "^1.0.0"
   }
